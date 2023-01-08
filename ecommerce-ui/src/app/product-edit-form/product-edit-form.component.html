@@ -1,0 +1,24 @@
+<div class="container p-4 mx-auto">
+    <h2 class="text-5xl font-semibold text-center underline">Edit-Product</h2>
+    <form [formGroup]="productForm" (ngSubmit)="onEdit()" class="p-6 bg-stone-400 w-fit mx-auto my-6 flex flex-col space-y-6">
+        <div>
+            <label for="productName" class="text-white"> Product Name</label>
+            <input class="w-full border-collapse px-2" type="text" name="productName" id="productName" formControlName="productName">
+        </div>
+        <div>
+            <label for="password" class="text-white mt-16"> Description </label>
+            <textarea class="w-full border-collapse px-2" cols="2"  name="description" id="description" formControlName="description"></textarea>
+        </div>
+        <div>
+            <label for="price" class="text-white"> Product price</label>
+            <input class="w-full border-collapse px-2" type="number" name="price" id="price" formControlName="price">
+        </div>
+        <div>
+           <button class="p-2 bg-white text-stone-800 rounded-md" type="submit" [disabled]="productForm.invalid" > Add Product </button>
+        </div>
+    </form>
+
+    <div  class="text-2xl font-semibold text-red-800 mx-auto mt-10 w-full">
+        <div >{{itemAddedMsg}}</div>
+    </div>
+</div>

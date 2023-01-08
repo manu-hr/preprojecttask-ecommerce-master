@@ -1,0 +1,54 @@
+<div class="container p-4 mx-auto">
+    <h2 class="text-5xl font-semibold text-center underline">Registration Form</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="p-6 bg-stone-400 w-fit mx-auto my-6 flex flex-col space-y-6 justify-center">
+        <div>
+            <label for="name" class="text-white"> User Name </label>
+            <input class="w-full border-collapse px-2" type="text" name="name" id="name" formControlName="name">
+        </div>
+        <div>
+            <label for="email" class="text-white"> Email Address </label>
+            <input class="w-full border-collapse px-2" type="email" name="email" id="email" formControlName="email">
+        </div>
+        <div>
+            <label for="contactNo" class="text-white"> Mobile Number </label>
+            <input class="w-full border-collapse px-2" type="text" name="contactNo" id="contactNo" formControlName="contactNo">
+        </div>
+        <div>
+            <label for="password" class="text-white mt-16"> Password </label>
+            <input class="w-full border-collapse px-2" type="password" name="password" id="password" formControlName="password">
+        </div>
+        <!-- <div>
+            <label for="confirmPassword" class="text-white mt-16"> Confirm Password </label>
+            <input class="w-full border-collapse px-2" type="password" name="confirmPassword" id="confirmPassword" formControlName="confirmPassword">
+        </div> -->
+        <div formGroupName="address" class="p-6 bg-stone-800 my-1 flex flex-col space-y-4 ">
+            <label for="confirmPassword" class="text-white text-2xl underline"> Address </label>
+            <div class="flex flex-wrap md:space-x-4 ">
+                <div>
+                    <label for="houseNo" class="text-white"> House Name / No. </label>
+                    <input class="w-full border-collapse px-2" type="text" name="houseNo" id="houseNo" formControlName="houseNo">
+                </div>
+                <div>
+                    <label for="streetName" class="text-white"> Street Name </label>
+                    <input class="w-full border-collapse px-2" type="text" name="streetName" id="streetName" formControlName="streetName">
+                </div>
+            </div>
+            <div class="flex flex-wrap md:space-x-4 ">
+                <div>
+                    <label for="city" class="text-white"> City </label>
+                    <input class="w-full border-collapse px-2" type="text" name="city" id="city" formControlName="city">
+                </div>
+                <div>
+                    <label for="pinCode" class="text-white"> Pin Code </label>
+                    <input class="w-full border-collapse px-2" type="text" name="pinCode" id="pinCode" formControlName="pinCode">
+                </div>
+            </div>
+
+        </div>
+        <div>
+            <button class="p-2 bg-white text-stone-800 rounded-md " type="submit" [disabled]="registerForm.invalid" > Register </button>
+         </div>
+        <a href="/login" class="mx-auto text-sm cursor-pointer underline">Already Registered? Click Here To Login</a>
+    </form>
+    <h2 class="text-2xl font-normal text-red-700 text-center underline">{{error}}</h2>
+</div>

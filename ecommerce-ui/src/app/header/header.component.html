@@ -1,0 +1,11 @@
+<nav class="p-4 w-full flex justify-around  bg-blue-900 text-white">
+    <a href="#" class="text-4xl">E-Commerce</a>
+    <div *ngIf="isLoggedIn" >
+        <button class="mx-3 p-1 px-3 bg-blue-300 text-black rounded-xl"  (click)="onLogOut()">Logout</button>
+        <button class="mx-3 p-1 px-3 bg-blue-300 text-black rounded-xl" routerLink="cart">Go To Cart</button>
+    </div>
+    <div *ngIf="!isLoggedIn">
+        <button class="mx-3 p-1 px-3 bg-blue-300 text-black rounded-xl"  routerLink="login">Login</button>
+        <button class="mx-3 p-1 px-3 bg-blue-300 text-black rounded-xl" routerLink="register">Register</button>
+    </div>
+</nav>

@@ -1,0 +1,18 @@
+<div class="container p-4 mx-auto">
+    <h2 class="text-5xl font-semibold text-center underline">Login Form</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="p-6 bg-stone-400 w-fit mx-auto my-6 flex flex-col space-y-6">
+        <div>
+            <label for="email" class="text-white"> Email Address </label>
+            <input class="w-full border-collapse px-2" type="email" name="email" id="email" formControlName="email">
+        </div>
+        <div>
+            <label for="password" class="text-white mt-16"> Password </label>
+            <input class="w-full border-collapse px-2" type="password" name="password" id="password" formControlName="password">
+        </div>
+        <div>
+           <button class="p-2 bg-white text-stone-800 rounded-md" type="submit" [disabled]="loginForm.invalid" > Login </button>
+        </div>
+        <a href="/register" class="mx-auto text-sm cursor-pointer underline">New User? Click Here To Register</a>
+    </form>
+    <h2 class="text-2xl font-normal text-red-700 text-center underline">{{error}}</h2>
+</div>
